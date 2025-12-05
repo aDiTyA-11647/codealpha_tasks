@@ -1,0 +1,92 @@
+    <!doctype html>
+    <html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Minimal Music Player</title>
+    <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+    <main class="player">
+        <div class="player-left">
+        <div class="cover">
+            <img id="cover-img" src="covers/default.jpg" alt="cover art" />
+        </div>
+
+        <div class="meta">
+            <h2 id="song-title">Song Title</h2>
+            <p id="song-artist">Artist Name</p>
+        </div>
+
+        <div class="controls">
+            <button id="prev" class="btn" title="Previous">⏮️</button>
+            <button id="play" class="btn" title="Play/Pause">▶️</button>
+            <button id="next" class="btn" title="Next">⏭️</button>
+        </div>
+
+        <div class="time-row">
+            <span id="current-time">0:00</span>
+            <div class="progress-wrap" title="Seek">
+            <input id="progress" type="range" min="0" max="100" value="0" />
+            </div>
+            <span id="duration">0:00</span>
+        </div>
+
+        <div class="extra-controls">
+            <div class="volume">
+            <button id="mute" class="btn" title="Mute">🔊</button>
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="1" />
+            </div>
+
+            <label class="autoplay">
+            <input id="autoplay" type="checkbox" />
+            Autoplay
+            </label>
+        </div>
+        </div>
+
+        <aside class="player-right">
+        <h3>Playlist</h3>
+        <ul id="playlist">
+    <li class="track active"
+        data-src="audio/bekhayali.mp3"
+        data-title="Bekhayali"
+        data-artist="Arijit Singh"
+        data-cover="covers/bekhayali.jpg">
+        <span class="track-info">Bekhayali — Arijit Singh</span>
+        <span class="track-time">3:12</span>
+    </li>
+
+    <li class="track"
+        data-src="audio/kisi-se-pyar.mp3"
+        data-title="Kisi Se Pyar Ho Jaye"
+        data-artist="Jubin"
+        data-cover="covers/kisi.jpg">
+        <span class="track-info">Kisi Se Pyar Ho Jaye — Jubin</span>
+        <span class="track-time">4:05</span>
+    </li>
+
+    <li class="track"
+        data-src="audio/manohari.mp3"
+        data-title="Manohari"
+        data-artist="Neeti Mohan"
+        data-cover="covers/manohari.jpg">
+        <span class="track-info">Manohari — Neeti Mohan</span>
+        <span class="track-time">2:58</span>
+    </li>
+    </ul>
+
+
+        <div class="playlist-actions">
+            <button id="shuffle" class="btn">Shuffle</button>
+            <button id="repeat" class="btn">Repeat</button>
+        </div>
+        </aside>
+
+        <!-- Hidden audio element used for playback -->
+        <audio id="audio" preload="metadata"></audio>
+    </main>
+
+    <script src="script.js"></script>
+    </body>
+    </html>
